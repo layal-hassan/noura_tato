@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block body %}
+
+<section id="services" class="jarallax"
+style="background-image: url(../../static/images/background-2.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<div class="container-lg padding-medium">
+  <div class="section-title text-center mb-5">
+    <h2 class="display-4 fw-normal">{{ service.name }}</h2> <!-- اسم الخدمة -->
+  </div>
+
+  <div class="row g-lg-5 my-0">
+
+   {% for item in items %}
+    <div class="col-md-6 col-lg-3 my-4">
+      <div class="bg-white   p-3 text-center ">
+        <a>
+          <div class="zoom-effect">
+            <img src="{{ item.image.url }}" class="img-fluid " alt="image">
+          </div>
+        </a>
+      </div>
+    </div>
+   {% endfor %}
+
+  </div>
+
+  <div class="text-center">
+  </div>
+
+</div>
+</section>
+{% endblock body %}
